@@ -41,5 +41,9 @@ if [ "$LATEST_COMMIT_HASH" != "$OLD_COMMIT_HASH" ]; then
 		rm -f "${HOME}/servers/bin/current-${TYPE}"
 		ln -sf "${HOME}/servers/tmp/bleed" "${HOME}/servers/bin/current-${TYPE}"	
 		echo "${LATEST_COMMIT_HASH}" > "${HASH_PATH}"
+
+		for bleed_pid in `ps aux | grep mono | grep bleed_ | awk '{print $2}'`; do
+			kill $bleed_pid
+		done
 	fi
 fi
