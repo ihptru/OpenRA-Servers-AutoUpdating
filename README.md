@@ -15,4 +15,10 @@ screen -dm -S openra_bleed_0  /home/openraservers/servers/scripts/start_game.sh 
 ```
 
 You can change mod from `ra` to `cnc`, `d2k` or `ts` and run as many instances as you want.
-Last argument is `server's port`
+
+Last argument is `server's port`.
+
+
+Make sure you can compile OpenRA without any errors before running this scripts.
+
+Also edit `USER` variable in `scripts/openra-restart-idle.sh` file to specify user which runs OpenRA servers.
