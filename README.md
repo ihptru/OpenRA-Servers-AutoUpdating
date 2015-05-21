@@ -20,5 +20,3 @@ Last argument is `server's port`.
 
 
 Make sure you can compile OpenRA without any errors before running this scripts.
-
-Also edit `USER` variable in `scripts/openra-restart-idle.sh` file to specify user which runs OpenRA servers.
