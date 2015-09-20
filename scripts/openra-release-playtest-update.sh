@@ -29,7 +29,6 @@ if [ "$VERSION" != "$OLDVERSION" ]; then
 	tar -xzvf "OpenRA-${TYPE}-${VERSION}.tar.gz" > /dev/null
 	cd "OpenRA-${TYPE}-${VERSION}/"
 
-	./configure > /dev/null
 	make dependencies > /dev/null
 	make all > /dev/null
 
