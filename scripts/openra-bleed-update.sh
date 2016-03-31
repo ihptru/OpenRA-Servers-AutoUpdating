@@ -9,7 +9,7 @@ OLD_COMMIT_HASH=$(cat "${HASH_PATH}")
 LATEST_COMMIT_HASH=`curl -s https://api.github.com/repos/OpenRA/OpenRA/commits/bleed | grep "sha" | head -1 | sed 's/.*"\([^"]*\)".*/\1/'`
 SHORTTAG=${LATEST_COMMIT_HASH:0:7}
 
-if [ "$LATEST_COMMIT_HASH" != "$OLD_COMMIT_HASH" ]; then
+if [ "$LATEST_COMMIT_HASH" != "$OLD_COMMIT_HASH" ] || [$1 == "--force"]; then
 
 	if [ ! -d "${HOME}/servers/tmp" ]; then
 		mkdir "${HOME}/servers/tmp"
