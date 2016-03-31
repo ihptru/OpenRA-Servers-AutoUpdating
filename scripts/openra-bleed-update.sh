@@ -52,3 +52,4 @@ if [ "$LATEST_COMMIT_HASH" != "$OLD_COMMIT_HASH" ]; then
 		done
 	fi
 fi
+exit

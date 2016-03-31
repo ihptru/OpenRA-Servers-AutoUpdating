@@ -49,3 +49,4 @@ if [ "$VERSION" != "$OLDVERSION" ]; then
 		echo "${VERSION}" > "${HOME}/servers/${TYPE}-version"
 	fi
 fi
+exit
