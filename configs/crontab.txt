@@ -1,3 +1,4 @@
 */5 * * * * $HOME/servers/scripts/openra-bleed-update.sh > /dev/null
 */5 * * * * $HOME/servers/scripts/openra-release-playtest-update.sh release
 */5 * * * * $HOME/servers/scripts/openra-release-playtest-update.sh playtest
+*/30 * * * * $HOME/servers/scripts/mapsync.sh
