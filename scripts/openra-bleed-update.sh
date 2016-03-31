@@ -22,6 +22,10 @@ if [ "$LATEST_COMMIT_HASH" != "$OLD_COMMIT_HASH" ]; then
 	cd "${HOME}/servers/tmp/"
 
 	git clone https://github.com/OpenRA/OpenRA.git bleed --quiet
+	if [ $? != "0" ]; then
+		exit;
+	fi
+
 	cd "bleed"
 
 	make dependencies > /dev/null

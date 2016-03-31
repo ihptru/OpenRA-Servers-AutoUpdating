@@ -12,7 +12,7 @@ OLDVERSION=$(cat ${HOME}/servers/"${TYPE}"-version)
 
 
 if [ "$VERSION" = "" ]; then
-        exit;
+	exit;
 fi
 
 if [ "$VERSION" != "$OLDVERSION" ]; then
@@ -25,6 +25,10 @@ if [ "$VERSION" != "$OLDVERSION" ]; then
 	fi
 
 	wget "$URL" -O "${HOME}/servers/tmp/OpenRA-${TYPE}-${VERSION}.tar.gz" -o -
+	if [ $? != "0" ]; then
+		exit;
+	fi
+
 	cd "${HOME}/servers/tmp/"
 	tar -xzvf "OpenRA-${TYPE}-${VERSION}.tar.gz" > /dev/null
 	cd "OpenRA-${TYPE}-${VERSION}/"
