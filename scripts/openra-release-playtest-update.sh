@@ -15,7 +15,7 @@ if [ "$VERSION" = "" ]; then
 	exit;
 fi
 
-if [ "$VERSION" != "$OLDVERSION" ]; then
+if [ "$VERSION" != "$OLDVERSION" ] || [ $2 == "--force" ]; then
 
 	if [ ! -d "${HOME}/servers/tmp" ]; then
 		mkdir "${HOME}/servers/tmp"
