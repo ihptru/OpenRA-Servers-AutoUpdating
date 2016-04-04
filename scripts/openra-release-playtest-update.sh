@@ -47,6 +47,12 @@ if [ "$VERSION" != "$OLDVERSION" ]; then
 		rm -f "${HOME}/servers/bin/current-${TYPE}"
 		ln -sf "${HOME}/servers/tmp/OpenRA-${TYPE}-${VERSION}" "${HOME}/servers/bin/current-${TYPE}"	
 		echo "${VERSION}" > "${HOME}/servers/${TYPE}-version"
+
+		if [ $TYPE = "playtest" ]; then
+			for playtest_pid in `ps aux | grep mono | grep playtest | awk '{print $2}'`; do
+        	                kill $playtest_pid
+	                done
+		fi
 	fi
 fi
 exit

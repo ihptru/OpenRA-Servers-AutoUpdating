@@ -26,7 +26,7 @@ while true; do
 			Server.AdvertiseOnline=$AdvertiseOnline \
 			Server.LockBots=True Server.TimeOut=$ServerTimeOut
 	else
-		mono --debug OpenRA.Game.exe Game.Mod=$Mod Server.Dedicated=$Dedicated Server.DedicatedLoop=$DedicatedLoop \
+		mono --debug OpenRA.Server.exe Game.Mod=$Mod \
 			Server.Name="EU $Name" Server.ListenPort=$ListenPort Server.ExternalPort=$ExternalPort \
 			Server.AdvertiseOnline=$AdvertiseOnline Server.TimeOut=$ServerTimeOut
 	fi
