@@ -5,7 +5,7 @@ Scripts to automatically update OpenRA release, playtest and bleed servers over 
 ```sh
 # Update/upgrade and install dependencies
 sudo apt-get update && sudo apt-get upgrade
-sudo apt-get install build-essential mono-complete rsync unzip
+sudo apt-get install build-essential mono-complete unzip
 
 # Create a "servers" directory in your home folder
 cd && mkdir servers
@@ -18,7 +18,9 @@ git clone https://github.com/ihptru/OpenRA-Servers-AutoUpdating.git ./servers
 ./servers/scripts/openra-release-playtest-update.sh playtest --force
 
 # Setup crontab
+cd ./servers/
 echo "HOME=${HOME}" | cat - ./configs/crontab.txt > /tmp/out && mv /tmp/out ./configs/crontab.txt
+echo "SHELL=/bin/bash" | cat - ./configs/crontab.txt > /tmp/out && mv /tmp/out ./configs/crontab.txt
 crontab ./configs/crontab.txt
 ```
 
