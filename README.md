@@ -5,7 +5,7 @@ Scripts to automatically update OpenRA release, playtest and bleed servers over 
 ```sh
 # Update/upgrade and install dependencies
 sudo apt-get update && sudo apt-get upgrade
-sudo apt-get install build-essential mono-complete unzip
+sudo apt-get install build-essential lua5.1 mono-complete unzip
 
 # Create a "servers" directory in your home folder
 cd && mkdir servers
